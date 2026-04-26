@@ -1,0 +1,291 @@
+.interface-app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.interface-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.interface-button {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  display: none;
+  cursor: pointer;
+  background: none;
+  user-select: none;
+  position: absolute;
+  touch-action: none;
+  text-align: center;
+  transform-origin: center;
+  -webkit-user-select: none;
+  font-family: 'system-ui', sans-serif;
+}
+
+.interface-button .interface-button-text {
+  font-size: 0.8rem;
+  user-select: none;
+  padding: 14px 18px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+}
+
+.interface-button-idle {
+}
+
+.interface-button-idle .interface-button-text {
+  color: #F9F9F9AA;
+  border: 1px solid #22222299;
+  background: #22222299;
+}
+
+.interface-button-press-it {
+}
+
+.interface-button-press-it .interface-button-text {
+  color: #222222;
+  background: #16A34A99;
+  border: 1px solid #222222;
+  box-shadow: 2px 2px #222222;
+}
+
+.interface-button-press-it .interface-button-text:active {
+  box-shadow: 0px 0px #222222;
+  transform: translate(2px, 2px);
+}
+
+.interface-button-hold-it {
+}
+
+.interface-button-hold-it .interface-button-text {
+  color: #222222;
+  background: #FFFFFF;
+  border: 1px solid #222222;
+  box-shadow: 2px 2px #222222;
+}
+
+.interface-button-hold-it .interface-button-text:active {
+  box-shadow: 0px 0px #222222;
+  transform: translate(2px, 2px);
+}
+
+.interface-button-shake-it {
+}
+
+.interface-button-shake-it .interface-button-text {
+  color: #222222;
+  border: 1px solid #222222;
+  box-shadow: 2px 2px #222222;
+}
+
+.interface-button-shake-it .interface-button-text:active {
+  box-shadow: 0px 0px #222222;
+  transform: translate(2px, 2px);
+}
+
+.interface-button-pull-it {
+  cursor: grab;
+  user-select: none;
+  resize: horizontal;
+  transform-origin: center;
+}
+
+.interface-button-pull-it .interface-button-text {
+  color: #222222;
+  background: #2563EB99;
+  box-shadow: 3px 3px #222;
+  border: 1px solid #222222;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.interface-button-pull-it .interface-button-text:hover {
+  box-shadow: 2px 2px #222222;
+  transform: translate(-1px, -1px);
+}
+
+.interface-button-pull-it .interface-button-text:active {
+  cursor: grabbing;
+  box-shadow: 0px 0px #222;
+  transform: translate(1px 1px) scale(0.98);
+}
+
+.interface-button-squeeze-it {
+  cursor: grab;
+  user-select: none;
+  resize: horizontal;
+  transform-origin: center;
+}
+
+.interface-button-squeeze-it .interface-button-text {
+  color: #222222;
+  background: #F59E0B99;
+  box-shadow: 3px 3px #222;
+  border: 1px solid #222222;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.interface-button-squeeze-it .interface-button-text:hover {
+  box-shadow: 2px 2px #222222;
+  transform: translate(-1px, -1px);
+}
+
+.interface-button-squeeze-it .interface-button-text:active {
+  cursor: grabbing;
+  box-shadow: 0px 0px #222;
+  transform: translate(1px 1px) scale(0.98);
+}
+
+.interface-button-assemble-it {
+  border-radius: 4px;
+}
+
+.interface-button-assemble-it .interface-button-text {
+  color: #222222;
+  background: #06B6D499;
+}
+
+.interface-button-assemble-it .interface-button-text:active {
+}
+
+.interface-button-assemble-it .interface-button-text.interface-button-piece {
+  inset: 0;
+  color: #222222;
+  position: absolute;
+  background: #06B6D499;
+  will-change: transform;
+}
+
+.interface-button-assemble-it .interface-button-text.interface-button-piece.interface-button-piece-inactive {
+  pointer-events: none;
+  border: 1px solid #222222;
+}
+
+.interface-button-fail {
+}
+
+.interface-button-fail .interface-button-text {
+  color: #F9F9F9 !important;
+  background: #DC2626DD !important;
+}
+
+.interface-attempts {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: white;
+  padding: 20px 0px;
+  position: absolute;
+  text-align: center;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.8);
+  animation: slide-in 0.2s ease-out forwards;
+}
+
+@keyframes shake-x {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-5px);
+  }
+  20% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(-4px);
+  }
+  40% {
+    transform: translateX(4px);
+  }
+  50% {
+    transform: translateX(-3px);
+  }
+  60% {
+    transform: translateX(3px);
+  }
+  70% {
+    transform: translateX(-2px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  90% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes explode {
+  0% {
+    transform: translateX(0);
+    border: 1px solid #222222;
+  }
+  10% {
+    transform: translateX(-5px);
+    border: 1px solid #222222;
+  }
+  20% {
+    transform: translateX(5px);
+    border: 1px solid #222222;
+  }
+  30% {
+    transform: translateX(-4px);
+    border: 1px solid #222222;
+  }
+  40% {
+    transform: translateX(4px);
+    border: 1px solid #222222;
+  }
+  50% {
+    transform: translateX(-3px);
+    border: 1px solid #222222;
+  }
+  60% {
+    transform: translateX(3px);
+    border: 1px solid #222222;
+  }
+  70% {
+    transform: translateX(-2px);
+    border: 1px solid #222222;
+  }
+  80% {
+    transform: translateX(2px);
+    border: 1px solid #222222;
+  }
+  90% {
+    transform: translateX(0);
+    border: 1px solid #222222;
+  }
+  100% {
+    transform: translateX(0);
+    border: 0;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
